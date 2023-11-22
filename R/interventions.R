@@ -272,6 +272,9 @@ add_pev_epi <- function(p, interventions){
   }else if (unique(interventions$scenario_type) == 'routine'){
     
     booster_cov<- 0.9
+  } else {
+    
+    booster_cov<- 0.0
   }
   
   p <- malariasimulation::set_pev_epi(
