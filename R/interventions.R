@@ -276,8 +276,7 @@ add_pev_epi <- function(p, interventions){
     booster_coverage = c(1), 
     booster_timed_coverage = interventions$booster_coverage,
     booster_timed_coverage_timestep = timesteps,
-    booster_profile = list(booster_profile),
-    booster_coverage = booster_cov
+    booster_profile = list(booster_profile)
   )
   
 
