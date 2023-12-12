@@ -264,19 +264,7 @@ add_pev_epi <- function(p, interventions){
   }
   
   # specify flat booster coverage scenarios (90% for routine and 100% for blue sky)
-  
-  if(unique(interventions$scenario_type) == 'bluesky'){
-    
-    booster_cov<- 1
-    
-  }else if (unique(interventions$scenario_type) == 'routine'){
-    
-    booster_cov<- 0.9
-  } else {
-    
-    booster_cov<- 0.0
-  }
-  
+
   p <- malariasimulation::set_pev_epi(
     parameters = p,
     profile = initial_profile,
@@ -285,6 +273,9 @@ add_pev_epi <- function(p, interventions){
     age = round(6 * month),
     min_wait = 0,
     booster_timestep = round(12 * month),
+    booster_coverage = c(1), 
+    booster_timed_coverage = interventions$booster_coverage,
+    booster_timed_coverage_timestep = timesteps,
     booster_profile = list(booster_profile),
     booster_coverage = booster_cov
   )
