@@ -272,10 +272,8 @@ add_pev_epi <- function(p, interventions){
     coverages = interventions$coverage,
     age = round(6 * month),
     min_wait = 0,
-    booster_timestep = round(12 * month),
-    booster_coverage = c(1), 
-    booster_timed_coverage = interventions$booster_coverage,
-    booster_timed_coverage_timestep = timesteps,
+    booster_spacing = round(12 * month),
+    booster_coverage = matrix(interventions$booster_coverage),
     booster_profile = list(booster_profile)
   )
   
